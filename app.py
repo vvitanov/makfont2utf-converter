@@ -45,13 +45,11 @@ def process_docx(input_bytes):
     return tmp.name
 
 # --- UI ---
-st.title("📄 MAK Font Converter")
+st.title("📄 МАК Фонт конвертор")
 
 st.markdown("""
 
-Оваа апликација конвертира Word (.docx) документи напишани со **Mac C Times** фонт 
-
-во стандарден **UTF-8 македонски кириличен текст**.
+Оваа апликација конвертира Word (.docx) документи напишани со **Mac C Times** фонт во стандарден **UTF-8 македонски кириличен текст**.
 
 ### Како се користи:
 
@@ -64,15 +62,15 @@ st.markdown("""
 ℹ️ Сите букви се мапираат автоматски според дефинирана табела.
 
 """)
-uploaded_file = st.file_uploader("Upload .docx file", type=["docx"])
+uploaded_file = st.file_uploader("Прикачи .docx документ", type=["docx"])
 
 if uploaded_file:
-    with st.spinner("Processing..."):
+    with st.spinner("Процесирање..."):
         output_path = process_docx(uploaded_file)
 
     with open(output_path, "rb") as f:
         st.download_button(
-            "⬇ Download converted file",
+            "⬇ Преземи го конвертираниот документ",
             f,
             file_name="converted.docx"
         )
