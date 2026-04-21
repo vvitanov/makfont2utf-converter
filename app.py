@@ -47,6 +47,23 @@ def process_docx(input_bytes):
 # --- UI ---
 st.title("📄 MAK Font Converter")
 
+st.markdown("""
+
+Оваа апликација конвертира Word (.docx) документи напишани со **Mac C Times** фонт 
+
+во стандарден **UTF-8 македонски кириличен текст**.
+
+### Како се користи:
+
+1. Прикачете .docx документ
+
+2. Почекајте обработка
+
+3. Преземете го конвертираниот документ
+
+ℹ️ Сите букви се мапираат автоматски според дефинирана табела.
+
+""")
 uploaded_file = st.file_uploader("Upload .docx file", type=["docx"])
 
 if uploaded_file:
